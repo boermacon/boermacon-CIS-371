@@ -1,0 +1,98 @@
+#mybox {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: 100px 1fr 1fr 100px;
+    grid-template-columns: 30% 15% 1fr 15%;
+    grid-template-areas:
+      "area1 area2 area2 area2"
+      "area3 area4 area4 area5"
+      "area3 area6 area7 area7"
+      "area3 area8 area8 area8";
+      gap: 2px;
+}
+ 
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image_center{
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    text-align: center;
+    color: white;
+    padding: 1em;
+}
+
+tr:not(:first-child):hover{
+    color: black;
+}
+
+tr{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-size: 1.5vw;
+}
+
+tr:nth-child(even){
+    background-color: chartreuse;
+}
+tr:nth-child(odd){
+    background-color: brown;
+}
+
+p{
+    word-break:break-all;
+    text-align: center;
+}
+
+#area1 {
+    background: hsl(217, 77%, 60%);
+    grid-area: area1;
+    padding: 0;
+}
+  
+#area2 {
+    background: red;
+    grid-area: area2;
+    padding-left: 4px;
+}
+
+#area3 {
+    background: hsl(217, 77%, 60%);
+    grid-area: area3;
+}
+
+#area4 {
+    background: hsl(217, 77%, 60%);
+    grid-area: area4;
+    padding-top: 10px;
+}
+  
+#area5 {
+    background: hsl(217, 77%, 60%);
+    grid-area: area5;
+  }
+  #area6 {
+    background: hsl(217, 77%, 60%);
+    grid-area: area6;
+  }
+  #area7 {
+    background: hsl(217, 77%, 60%);
+    grid-area: area7;
+  }
+  #area8 {
+    background: hsl(217, 77%, 60%);
+    grid-area: area8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
