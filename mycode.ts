@@ -20,7 +20,7 @@ const head1 = document.createElement("th")
 const head2 = document.createElement("th")
 const head3 = document.createElement("th")
 
-tArea4.appendChild(table)
+tArea4?.appendChild(table)
 head1.appendChild(document.createTextNode("Course Number"))
 head2.appendChild(document.createTextNode("Course Name"))
 head3.appendChild(document.createTextNode("Semester Taken"))
@@ -41,4 +41,52 @@ for(let i of myCourses){
     forRow.appendChild(entry2)
     forRow.appendChild(entry3)
     table.appendChild(forRow)
+}
+
+//Area 6
+type Company = {
+    name: string,           // Ex: "MSFT"
+    abbreviation: string,   // Ex: Microsoft
+    url: string             // Ex: https://microsoft.com
+  }
+
+const myCompanies: Array<Company> = [{name: "Beck's Kennels", abbreviation: "BKen", url: "http://www.beckskennels.com/dog_sled.html"},{name: "United Nuclear", abbreviation: "UN", url: "https://unitednuclear.com/"},{name: "AirZoo", abbreviation: "AZ", url: "https://www.airzoo.org/"}]
+
+const area6 = document.getElementById("area6-list")
+const listSpan = document.createElement("span")
+listSpan.id = 'area6'
+const list = document.createElement("ol")
+area6?.appendChild(listSpan)
+listSpan.appendChild(list)
+
+for(let i of myCompanies){
+    const entry = document.createElement("li")
+    const url = document.createElement("a")
+    url.href = i.url
+    url.appendChild(document.createTextNode(i.abbreviation))
+    entry.appendChild(url)
+    list.appendChild(entry)
+}
+
+type SocialMedia = {
+    icon: string;   // this can be a name of a local image or a URL to a remote image
+    url: string;    // URL of the said social media company
+    name: string;
+  }
+
+const myIcons: Array<SocialMedia> = [{icon: "amazon.png", url: "https://www.amazon.com/", name: "Amazon"}, {icon: "github.png", url: "https://github.com/", name: "Github"}, {icon: "google.png", url: "https://www.google.com/", name: "Google"}, {icon: "reddit.png", url: "https://www.reddit.com/", name: "Reddit"}, {icon: "youtube.png", url: "https://www.youtube.com/", name: "Youtube"}]
+
+const area8 = document.getElementById("area8-icons")
+const iconSpan = document.createElement("span")
+iconSpan.id = 'area8'
+area8?.appendChild(iconSpan)
+for(let i of myIcons){
+    const entry = document.createElement("a")
+    entry.href = i.url
+    const img = document.createElement("img")
+    img.src = i.icon
+    img.height = 75
+    img.alt = i.name
+    entry.appendChild(img)
+    iconSpan.appendChild(entry)
 }
